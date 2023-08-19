@@ -29,8 +29,15 @@ pipeline
                bat 'java JunitTest.java'
                
             }
-        }
-        
-        
+        }      
     }
+    post{
+        failure{
+                mail bcc: '', body: '''Hi Welcome to jenkins email alerts...
+
+               Thanks,
+               Sijy''', cc: '', from: '', replyTo: '', subject: 'Email configuration of Pipeline jenkins job', to: 'sijypaul.devops@gmail.com'
+
+        }
+    }   
 }
