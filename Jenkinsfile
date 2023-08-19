@@ -17,7 +17,7 @@ pipeline
         {
             steps 
             {
-               cd JunitTesting/src/testing
+               readFile 'JunitTesting/src/testing'
                bat 'javac JunitTest.java'
             }
         }
@@ -25,7 +25,7 @@ pipeline
         {
             steps 
             {
-              cd JunitTesting/src/testing
+              readFile 'JunitTesting/src/testing'
                bat 'java JunitTest.java'
                
             }
